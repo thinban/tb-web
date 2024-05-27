@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:mysql://mysql:3307/mp1208?useUnicode=true&characterEncoding=UTF-8&tinyInt1isBit=false
+    username: root
+    password: your-pass-word
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: redis
+      port: 6379
+
+logging:
+  level:
+    com.example.tbdevweb: debug
+    org.springframework.web: DEBUG
