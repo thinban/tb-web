@@ -22,11 +22,14 @@ public class TbDevWebApplication {
     @Resource
     UsersService usersService;
 
-    @GetMapping("foo")
-    public Object foo() {
-        return "bar";
-    }
-
+    /**
+     * 单表增删改查
+     *
+     * @param op      1增 2删 3改 4查（分页排序：?current=1&size=10&orders[0].column=email&orders[0].asc=false&orders[1].column=username)
+     * @param pageReq
+     * @param req
+     * @return
+     */
     @PostMapping("db/{op}")
     public Object db(@PathVariable int op, Page pageReq, @RequestBody(required = false) Users req) {
         if (op == 1) {
